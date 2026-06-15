@@ -153,21 +153,6 @@ document.querySelectorAll('[data-redeem]').forEach((button) => {
   });
 });
 
-document.querySelectorAll('[data-portal-tab]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const tab = button.dataset.portalTab;
-    document.querySelectorAll('[data-portal-tab]').forEach((item) => item.classList.toggle('active', item === button));
-    document.querySelectorAll('[data-portal-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.portalPanel === tab));
-  });
-});
-
-document.getElementById('feedbackForm').addEventListener('submit', (event) => {
-  event.preventDefault();
-  const type = document.getElementById('feedbackType').value;
-  event.currentTarget.reset();
-  showToast('Feedback received', `${type} has been logged for the project team.`);
-});
-
 document.querySelector('.alert-card button').addEventListener('click', (event) => {
   event.currentTarget.closest('.alert-card').remove();
 });
