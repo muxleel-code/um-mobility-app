@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#072c5b">
+  <title>UM Mobility | Nadi Mobility</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-bar">
+    <span class="live-dot"></span>
+    Interactive concept prototype
+    <span class="demo-separator"></span>
+    Pilot simulation data
+  </div>
+
+  <div class="site-shell">
+    <aside class="rail">
+      <div class="brand-lockup">
+        <img src="assets/nadi_logo.jpg" alt="Nadi Mobility">
+        <span class="brand-divider"></span>
+        <img src="assets/um_logo.jpg" alt="Universiti Malaya">
+      </div>
+
+      <div class="rail-copy">
+        <p class="eyebrow">UM Zero-Emission Smart Campus</p>
+        <h1>One campus.<br><span>One connected journey.</span></h1>
+        <p class="intro">A digital mobility layer connecting Park & Ride, electric shuttles, walking routes, e-bikes and Green Miles.</p>
+      </div>
+
+      <div class="strategy-card">
+        <div class="strategy-title">
+          <span>Corporate strategy map</span>
+          <button class="text-button" data-open-modal="strategyModal">View map</button>
+        </div>
+        <div class="strategy-flow" aria-label="Corporate strategy flow">
+          <div><b>Enable</b><span>Digital integration</span></div>
+          <i></i>
+          <div><b>Experience</b><span>Simple low-carbon travel</span></div>
+          <i></i>
+          <div><b>Impact</b><span>Measurable campus value</span></div>
+        </div>
+      </div>
+
+      <div class="rail-stats">
+        <div><strong>5</strong><span>Mobility layers</span></div>
+        <div><strong>3</strong><span>Shuttle routes</span></div>
+        <div><strong>24/7</strong><span>Digital access</span></div>
+      </div>
+
+      <div class="rail-footer">
+        <button class="dashboard-link" data-page="portal">
+          <span class="icon" data-icon="chart"></span>
+          Stakeholder & operations portal
+          <span class="arrow">→</span>
+        </button>
+        <p>Prepared by Nadi Mobility Project Management Sdn. Bhd.</p>
+      </div>
+    </aside>
+
+    <main class="app-stage">
+      <div class="app-frame">
+        <header class="app-header">
+          <button class="avatar" aria-label="Open profile">AZ</button>
+          <div class="app-brand">
+            <span>UM TOUCH</span>
+            <b>Mobility</b>
+          </div>
+          <button class="header-action notification-button" aria-label="Notifications">
+            <span class="icon" data-icon="bell"></span>
+            <span class="notification-dot"></span>
+          </button>
+        </header>
+
+        <section class="page active" id="homePage" data-page-name="home">
+          <div class="home-hero">
+            <div>
+              <p>Good morning, Aina</p>
+              <h2>Where are you going?</h2>
+            </div>
+            <div class="weather"><span class="icon" data-icon="cloud"></span><b>29°</b><small>Light rain</small></div>
+          </div>
+
+          <button class="destination-search" data-page="journey">
+            <span class="icon" data-icon="search"></span>
+            <span>Search campus destination</span>
+            <kbd>Plan</kbd>
+          </button>
+
+          <div class="impact-card">
+            <div>
+              <span class="impact-label">Your June impact</span>
+              <strong><span id="homeMiles">320</span> <small>Green Miles</small></strong>
+              <p>2.4 kg CO₂ saved this week</p>
+            </div>
+            <div class="impact-ring"><span>68%</span><small>monthly goal</small></div>
+          </div>
+
+          <div class="section-heading">
+            <div><span>Leave now</span><h3>Best way to Main Library</h3></div>
+            <button class="text-button" data-page="journey">See options</button>
+          </div>
+
+          <button class="recommended-trip" data-page="journey">
+            <div class="trip-route-icons"><span class="mode-dot walk"><span class="icon" data-icon="walk"></span></span><i></i><span class="mode-dot bus"><span class="icon" data-icon="bus"></span></span><i></i><span class="mode-dot walk"><span class="icon" data-icon="walk"></span></span></div>
+            <div class="trip-main"><strong>18 min</strong><span>Walk · Route A · Walk</span></div>
+            <div class="trip-reward"><b>+10</b><span>miles</span></div>
+          </button>
+
+          <div class="section-heading compact">
+            <div><span>Live network</span><h3>Nearby services</h3></div>
+          </div>
+
+          <div class="service-grid">
+            <button class="service-card bus-service" data-page="shuttle">
+              <span class="icon-wrap"><span class="icon" data-icon="bus"></span></span>
+              <span><b>Route A</b><small>KL Gate · Library</small></span>
+              <em>4 min</em>
+            </button>
+            <button class="service-card" data-page="ebike">
+              <span class="icon-wrap green"><span class="icon" data-icon="bike"></span></span>
+              <span><b>E-bikes</b><small>Student Union Hub</small></span>
+              <em>12</em>
+            </button>
+            <button class="service-card" data-page="parking">
+              <span class="icon-wrap cyan"><span class="icon" data-icon="parking"></span></span>
+              <span><b>Park & Ride</b><small>KL Gate Hub</small></span>
+              <em>68</em>
+            </button>
+          </div>
+
+          <div class="alert-card">
+            <span class="icon" data-icon="umbrella"></span>
+            <div><b>Wet weather advisory</b><p>Use the covered Green Spine route to DTC.</p></div>
+            <button aria-label="Dismiss alert">×</button>
+          </div>
+        </section>
+
+        <section class="page" id="journeyPage" data-page-name="journey">
+          <div class="page-topline">
+            <button class="back-button" data-page="home"><span class="icon" data-icon="back"></span></button>
+            <div><span>Journey planner</span><h2>Plan your trip</h2></div>
+          </div>
+
+          <div class="route-form">
+            <div class="route-pins"><span></span><i></i><span></span></div>
+            <div class="route-fields">
+              <label><small>From</small><input value="KL Gate Park & Ride" readonly></label>
+              <label><small>To</small><input id="destinationInput" value="Main Library" readonly></label>
+            </div>
+            <button class="swap-button" aria-label="Swap locations"><span class="icon" data-icon="swap"></span></button>
+          </div>
+
+          <div class="filter-row">
+            <button class="filter active">Recommended</button>
+            <button class="filter">Fastest</button>
+            <button class="filter">Lowest carbon</button>
+            <button class="filter">Accessible</button>
+          </div>
+
+          <div class="route-map">
+            <img src="assets/route_a.png" alt="UM Route A campus map">
+            <div class="map-wash"></div>
+            <span class="map-pin start">KL Gate</span>
+            <span class="map-pin end">Library</span>
+            <div class="map-eta"><b>18 min</b><span>Arrive 10:02</span></div>
+          </div>
+
+          <div class="section-heading compact"><div><span>3 available options</span><h3>Recommended journeys</h3></div></div>
+
+          <div class="journey-options">
+            <button class="journey-option selected" data-start-trip>
+              <div class="option-top"><span class="best-badge">Best choice</span><b>18 min</b><em>+10 miles</em></div>
+              <div class="option-steps"><span><span class="icon" data-icon="walk"></span>3 min</span><i></i><span><span class="route-chip a">A</span>9 min</span><i></i><span><span class="icon" data-icon="walk"></span>6 min</span></div>
+              <div class="option-bottom"><span>Every 8 min</span><span>0.08 kg CO₂</span><span>Low crowd</span></div>
+            </button>
+            <button class="journey-option" data-start-trip>
+              <div class="option-top"><span class="eco-badge">Lowest carbon</span><b>14 min</b><em>+15 miles</em></div>
+              <div class="option-steps"><span><span class="icon" data-icon="walk"></span>2 min</span><i></i><span><span class="icon" data-icon="bike"></span>12 min</span></div>
+              <div class="option-bottom"><span>12 bikes nearby</span><span>0.00 kg CO₂</span><span>Light rain</span></div>
+            </button>
+          </div>
+        </section>
+
+        <section class="page" id="shuttlePage" data-page-name="shuttle">
+          <div class="page-topline">
+            <button class="back-button" data-page="home"><span class="icon" data-icon="back"></span></button>
+            <div><span>Live shuttle</span><h2>Campus network</h2></div>
+            <button class="header-action"><span class="icon" data-icon="layers"></span></button>
+          </div>
+
+          <div class="shuttle-map">
+            <img id="routeMap" src="assets/route_a.png" alt="Selected shuttle route">
+            <div class="map-wash light"></div>
+            <span class="moving-bus"><span class="icon" data-icon="bus"></span></span>
+            <div class="map-legend"><span><i class="a"></i>Route A</span><span><i class="b"></i>Route B</span><span><i class="c"></i>Route C</span></div>
+          </div>
+
+          <div class="route-tabs">
+            <button class="route-tab active" data-route="A"><b>A</b><span>Core West</span></button>
+            <button class="route-tab" data-route="B"><b>B</b><span>North Loop</span></button>
+            <button class="route-tab" data-route="C"><b>C</b><span>South Health</span></button>
+          </div>
+
+          <div class="arrival-panel">
+            <div class="arrival-head"><div><span>Nearest stop</span><h3>KL Gate Mobility Hub</h3></div><button><span class="icon" data-icon="navigate"></span></button></div>
+            <div class="arrival-row"><span class="route-chip a route-letter">A</span><div><b>To Main Library</b><small>EV Shuttle · Low crowd</small></div><strong>4 <small>min</small></strong></div>
+            <div class="arrival-row muted"><span class="route-chip a route-letter">A</span><div><b>To Main Library</b><small>EV Shuttle · Medium crowd</small></div><strong>12 <small>min</small></strong></div>
+          </div>
+
+          <div class="service-note"><span class="icon" data-icon="bolt"></span><p><b>Zero-emission service</b><br>Live positions are simulated for this concept prototype.</p></div>
+        </section>
+
+        <section class="page" id="ebikePage" data-page-name="ebike">
+          <div class="page-topline">
+            <button class="back-button" data-page="home"><span class="icon" data-icon="back"></span></button>
+            <div><span>Shared e-bike</span><h2>Choose a nearby bike</h2></div>
+          </div>
+
+          <div class="bike-map">
+            <div class="campus-shape"></div>
+            <button class="hub-pin p1 active"><b>12</b><span>Student Union</span></button>
+            <button class="hub-pin p2"><b>8</b><span>Main Library</span></button>
+            <button class="hub-pin p3"><b>5</b><span>DTC</span></button>
+            <button class="hub-pin p4"><b>16</b><span>Residential</span></button>
+            <span class="you-pin">You</span>
+          </div>
+
+          <div class="bike-sheet">
+            <span class="sheet-handle"></span>
+            <div class="bike-location"><div><span>Nearest hub · 2 min walk</span><h3>Student Union Hub</h3></div><button><span class="icon" data-icon="navigate"></span></button></div>
+            <div class="bike-availability">
+              <div><span class="icon" data-icon="bike"></span><b>12</b><small>bikes</small></div>
+              <div><span class="icon" data-icon="parking"></span><b>6</b><small>docks</small></div>
+              <div><span class="icon" data-icon="battery"></span><b>82%</b><small>avg. battery</small></div>
+            </div>
+            <button class="primary-button" id="scanBike"><span class="icon" data-icon="scan"></span> Scan to unlock</button>
+            <p class="safety-copy"><span class="icon" data-icon="shield"></span> Maximum 20 km/h. Park only at designated mobility hubs.</p>
+          </div>
+        </section>
+
+        <section class="page" id="parkingPage" data-page-name="parking">
+          <div class="page-topline">
+            <button class="back-button" data-page="home"><span class="icon" data-icon="back"></span></button>
+            <div><span>Park & Ride</span><h2>Campus-edge hubs</h2></div>
+          </div>
+
+          <div class="parking-hero">
+            <span class="icon" data-icon="parking"></span>
+            <div><span>Best availability</span><h3>KL Gate Mobility Hub</h3><p>Seamless transfer to Route A and Green Spine.</p></div>
+          </div>
+
+          <div class="occupancy-card">
+            <div class="occupancy-head"><div><span>Live availability</span><h3>68 spaces available</h3></div><strong>42%</strong></div>
+            <div class="occupancy-bar"><i style="width:42%"></i></div>
+            <div class="parking-types"><span><i class="standard"></i>Standard 54</span><span><i class="ev"></i>EV charging 8</span><span><i class="accessible"></i>Accessible 6</span></div>
+          </div>
+
+          <div class="section-heading compact"><div><span>Continue your journey</span><h3>Connections from this hub</h3></div></div>
+          <div class="connection-list">
+            <button data-page="shuttle"><span class="icon-wrap"><span class="icon" data-icon="bus"></span></span><div><b>Route A Shuttle</b><small>Next departure in 4 min</small></div><em>9 min</em></button>
+            <button data-page="ebike"><span class="icon-wrap green"><span class="icon" data-icon="bike"></span></span><div><b>Shared E-Bike</b><small>12 bikes available</small></div><em>12 min</em></button>
+            <button data-page="journey"><span class="icon-wrap cyan"><span class="icon" data-icon="walk"></span></span><div><b>Green Spine Walk</b><small>Covered route · Low slope</small></div><em>24 min</em></button>
+          </div>
+          <button class="primary-button" id="navigateParking"><span class="icon" data-icon="navigate"></span> Navigate to KL Gate Hub</button>
+        </section>
+
+        <section class="page" id="milesPage" data-page-name="miles">
+          <div class="miles-hero">
+            <div class="page-topline light-text">
+              <div><span>UM Green Miles</span><h2>Your low-carbon impact</h2></div>
+              <button class="header-action"><span class="icon" data-icon="info"></span></button>
+            </div>
+            <div class="miles-balance"><span>Available balance</span><strong id="milesBalance">320</strong><small>GREEN MILES</small></div>
+            <div class="miles-impact"><div><b>2.4 kg</b><span>CO₂ saved</span></div><i></i><div><b>5</b><span>green trips</span></div><i></i><div><b>#12</b><span>college rank</span></div></div>
+          </div>
+
+          <div class="miles-content">
+            <div class="challenge-card">
+              <span class="icon" data-icon="leaf"></span>
+              <div><span>Weekly challenge</span><b>Complete 2 more green trips</b><div class="challenge-progress"><i></i></div><small>5 of 7 trips · +50 bonus miles</small></div>
+            </div>
+
+            <div class="section-heading compact"><div><span>Use your points</span><h3>Featured rewards</h3></div><button class="text-button" data-open-modal="rewardsModal">View all</button></div>
+            <div class="reward-scroll">
+              <button class="reward-card" data-redeem="80" data-reward="Campus café 10% off"><span class="reward-art coffee"><span class="icon" data-icon="coffee"></span></span><b>Campus café</b><small>10% discount</small><em>80 miles</em></button>
+              <button class="reward-card" data-redeem="120" data-reward="Library printing credit"><span class="reward-art print"><span class="icon" data-icon="print"></span></span><b>Library print</b><small>RM5 credit</small><em>120 miles</em></button>
+              <button class="reward-card" data-redeem="200" data-reward="Priority e-bike booking"><span class="reward-art cycle"><span class="icon" data-icon="bike"></span></span><b>Priority booking</b><small>E-bike access</small><em>200 miles</em></button>
+            </div>
+
+            <div class="section-heading compact"><div><span>Recent activity</span><h3>How you earned</h3></div></div>
+            <div class="activity-list">
+              <div><span class="activity-icon bike"><span class="icon" data-icon="bike"></span></span><div><b>E-bike to Main Library</b><small>Today · 1.2 km · 0.32 kg CO₂</small></div><em>+15</em></div>
+              <div><span class="activity-icon bus"><span class="icon" data-icon="bus"></span></span><div><b>Route A shuttle</b><small>Yesterday · KL Gate to DTC</small></div><em>+8</em></div>
+              <div><span class="activity-icon walk"><span class="icon" data-icon="walk"></span></span><div><b>Green Spine walk</b><small>12 June · 1.4 km</small></div><em>+14</em></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="portalPage" data-page-name="portal">
+          <div class="portal-hero">
+            <div class="page-topline light-text">
+              <button class="back-button light" data-page="home"><span class="icon" data-icon="back"></span></button>
+              <div><span>Stakeholder engagement portal</span><h2>Project Pulse</h2></div>
+            </div>
+            <p>Transparent updates, pilot performance and community participation in one place.</p>
+            <div class="phase-pill"><span>Current phase</span><b>Pilot & foundation</b><em>Year 1</em></div>
+          </div>
+
+          <div class="portal-content">
+            <div class="portal-tabs"><button class="active" data-portal-tab="overview">Overview</button><button data-portal-tab="updates">Updates</button><button data-portal-tab="engage">Engage</button></div>
+
+            <div class="portal-panel active" data-portal-panel="overview">
+              <div class="section-heading compact"><div><span>Pilot simulation</span><h3>Mobility performance</h3></div><span class="updated">Updated 2 min ago</span></div>
+              <div class="kpi-grid">
+                <div><span class="kpi-icon"><span class="icon" data-icon="users"></span></span><b>1,248</b><small>daily riders</small><em>↑ 12%</em></div>
+                <div><span class="kpi-icon"><span class="icon" data-icon="clock"></span></span><b>6.4</b><small>min avg. wait</small><em>Target &lt; 8</em></div>
+                <div><span class="kpi-icon"><span class="icon" data-icon="leaf"></span></span><b>284</b><small>kg CO₂ saved</small><em>this week</em></div>
+                <div><span class="kpi-icon"><span class="icon" data-icon="smile"></span></span><b>4.3</b><small>user rating</small><em>out of 5</em></div>
+              </div>
+              <div class="mini-chart-card"><div class="chart-head"><div><span>Ridership by route</span><h3>Weekly demand</h3></div><span class="legend"><i></i>Passengers</span></div><div class="bar-chart"><span style="--h:45%"><b>M</b></span><span style="--h:62%"><b>T</b></span><span style="--h:55%"><b>W</b></span><span style="--h:78%"><b>T</b></span><span style="--h:88%"><b>F</b></span><span style="--h:52%"><b>S</b></span><span style="--h:38%"><b>S</b></span></div></div>
+              <button class="portal-action" data-open-modal="strategyModal"><span class="icon" data-icon="target"></span><div><b>View corporate strategy map</b><small>See how project activities connect to UM outcomes</small></div><span>→</span></button>
+            </div>
+
+            <div class="portal-panel" data-portal-panel="updates">
+              <div class="update-card featured"><span class="update-date"><b>18</b>JUN</span><div><em>Pilot update</em><h3>Route A trial enters service-readiness testing</h3><p>Vehicle tracking, stop displays and user feedback channels will be tested with selected campus users.</p><button>Read update →</button></div></div>
+              <div class="update-card"><span class="update-date"><b>24</b>JUN</span><div><em>Engagement session</em><h3>Student mobility co-design workshop</h3><p>Dewan Tunku Canselor · 2:00 PM</p><button>Register interest →</button></div></div>
+              <div class="update-card"><span class="update-date"><b>01</b>JUL</span><div><em>Project document</em><h3>Pilot performance briefing</h3><p>Public summary of early demand, waiting time and user satisfaction.</p><button>Coming soon</button></div></div>
+            </div>
+
+            <div class="portal-panel" data-portal-panel="engage">
+              <div class="engage-intro"><span class="icon" data-icon="message"></span><div><span>Your voice matters</span><h3>Help shape campus mobility</h3><p>Share an idea, report an issue or join the pilot user panel.</p></div></div>
+              <form id="feedbackForm" class="feedback-form">
+                <label><span>I want to</span><select id="feedbackType"><option>Share a suggestion</option><option>Report a mobility issue</option><option>Join the pilot panel</option><option>Ask a project question</option></select></label>
+                <label><span>Related service</span><select><option>General mobility</option><option>Campus shuttle</option><option>Park & Ride</option><option>Shared e-bike</option><option>Walking route</option><option>Green Miles</option></select></label>
+                <label><span>Message</span><textarea required placeholder="Tell the project team what would improve your campus journey..."></textarea></label>
+                <button class="primary-button" type="submit"><span class="icon" data-icon="send"></span> Submit feedback</button>
+              </form>
+              <p class="data-note"><span class="icon" data-icon="shield"></span> Prototype only. No personal information is transmitted or stored.</p>
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Main navigation">
+          <button class="active" data-page="home"><span class="icon" data-icon="home"></span><span>Home</span></button>
+          <button data-page="journey"><span class="icon" data-icon="route"></span><span>Journey</span></button>
+          <button data-page="shuttle"><span class="icon" data-icon="bus"></span><span>Shuttle</span></button>
+          <button data-page="miles"><span class="icon" data-icon="leaf"></span><span>Green Miles</span></button>
+          <button data-page="portal"><span class="icon" data-icon="message"></span><span>Portal</span></button>
+        </nav>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal" id="strategyModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card strategy-modal-card">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <p class="eyebrow">Nadi Mobility × Universiti Malaya</p>
+      <h2>Corporate Strategy Map</h2>
+      <p class="modal-lead">From digital capability to measurable stakeholder value.</p>
+      <div class="full-strategy-map">
+        <div class="strategy-layer vision"><span>Vision</span><b>A connected, accessible and low-carbon UM campus</b></div>
+        <div class="strategy-arrow">↓</div>
+        <div class="strategy-layer value"><span>Stakeholder value</span><div><b>Convenient journeys</b><b>Reduced congestion</b><b>Inclusive access</b><b>Transparent impact</b></div></div>
+        <div class="strategy-arrow">↓</div>
+        <div class="strategy-layer operations"><span>Mobility strategy</span><div><b>Park & Ride</b><b>Electric shuttle</b><b>Green Spine</b><b>Shared e-bike</b></div></div>
+        <div class="strategy-arrow">↓</div>
+        <div class="strategy-layer enablers"><span>Digital enablers</span><div><b>UM Touch</b><b>Green Miles</b><b>PMIS dashboard</b><b>Data governance</b></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="rewardsModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card rewards-modal-card">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <p class="eyebrow">Green Miles catalogue</p>
+      <h2>Rewards that support campus life</h2>
+      <div class="catalogue-list">
+        <button data-redeem="80" data-reward="Campus café 10% off"><span class="icon" data-icon="coffee"></span><div><b>Campus café discount</b><small>10% off one purchase</small></div><em>80</em></button>
+        <button data-redeem="120" data-reward="Library printing credit"><span class="icon" data-icon="print"></span><div><b>Library printing credit</b><small>RM5 printing value</small></div><em>120</em></button>
+        <button data-redeem="200" data-reward="Priority e-bike booking"><span class="icon" data-icon="bike"></span><div><b>Priority e-bike booking</b><small>Reserve up to 15 minutes</small></div><em>200</em></button>
+        <button data-redeem="250" data-reward="UM Mobility merchandise"><span class="icon" data-icon="gift"></span><div><b>UM Mobility merchandise</b><small>Limited pilot collection</small></div><em>250</em></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"><span class="icon" data-icon="check"></span><div><b id="toastTitle">Success</b><small id="toastMessage">Action completed</small></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
