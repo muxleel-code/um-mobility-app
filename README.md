@@ -2,6 +2,8 @@
 
 Interactive browser prototype prepared for the BQB7016 project presentation.
 
+Public site: https://muxleel-code.github.io/um-mobility-app/
+
 ## Open the prototype
 
 Open `index.html` in a modern browser. No installation, build process or internet connection is required.
